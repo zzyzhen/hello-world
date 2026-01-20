@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hinge - Dating App Prototype</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">Hinge</div>
+            <div class="header-icons">
+                <button class="icon-btn" id="settingsBtn">⚙️</button>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-btn active" data-view="discover">
+                <span class="nav-icon">🔥</span>
+                <span class="nav-label">Discover</span>
+            </button>
+            <button class="nav-btn" data-view="matches">
+                <span class="nav-icon">💬</span>
+                <span class="nav-label">Matches</span>
+            </button>
+            <button class="nav-btn" data-view="likes">
+                <span class="nav-icon">❤️</span>
+                <span class="nav-label">Likes</span>
+            </button>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Discover View -->
+            <div id="discover-view" class="view active">
+                <div class="profile-container">
+                    <div class="profile-card" id="profileCard">
+                        <!-- Profile content will be dynamically inserted -->
+                    </div>
+
+                    <div class="no-profiles" id="noProfiles" style="display: none;">
+                        <h2>🎉 You've seen everyone!</h2>
+                        <p>Check back later for new profiles</p>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons" id="actionButtons">
+                    <button class="action-btn pass-btn" id="passBtn">
+                        <span class="btn-icon">✕</span>
+                    </button>
+                    <button class="action-btn comment-btn" id="commentBtn">
+                        <span class="btn-icon">💬</span>
+                    </button>
+                    <button class="action-btn like-btn" id="likeBtn">
+                        <span class="btn-icon">❤️</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Matches View -->
+            <div id="matches-view" class="view">
+                <div class="matches-header">
+                    <h2>Matches</h2>
+                </div>
+                <div class="matches-list" id="matchesList">
+                    <!-- Matches will be dynamically inserted -->
+                </div>
+            </div>
+
+            <!-- Likes View -->
+            <div id="likes-view" class="view">
+                <div class="likes-header">
+                    <h2>People You've Liked</h2>
+                </div>
+                <div class="likes-list" id="likesList">
+                    <!-- Likes will be dynamically inserted -->
+                </div>
+            </div>
+
+            <!-- Chat View -->
+            <div id="chat-view" class="view">
+                <div class="chat-header">
+                    <button class="back-btn" id="backToMatches">← Back</button>
+                    <h3 id="chatName"></h3>
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Messages will be dynamically inserted -->
+                </div>
+                <div class="chat-input-container">
+                    <input type="text" id="chatInput" placeholder="Type a message...">
+                    <button id="sendBtn">Send</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Comment Modal -->
+        <div class="modal" id="commentModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Add a comment</h3>
+                    <button class="close-modal" id="closeModal">✕</button>
+                </div>
+                <div class="modal-body">
+                    <p id="promptText"></p>
+                    <textarea id="commentInput" placeholder="Write your comment here..."></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button class="send-comment-btn" id="sendComment">Send Like & Comment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
